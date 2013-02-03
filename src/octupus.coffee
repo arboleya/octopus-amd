@@ -10,14 +10,10 @@ class OctupusAMD
   @MAP = {}
 
   # ...
-  # config toaster
+  # configures octopus
   @config:( options )->
-    OctupusAMD.BASE_URL = options.base_url
-
-  # ...
-  # sets the layer map
-  @map:( layer_map )->
-    OctupusAMD.MAP = layer_map
+    OctupusAMD.BASE_URL = options.base_url ? ''
+    OctupusAMD.MAP = options.paths ? {}
 
   # ...
   # process all require's and define's calls
