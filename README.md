@@ -8,6 +8,11 @@ Micro AMD Loader.
  - [Usage](#usage)
  - [Tools](#tools)
  - [Example](https://github.com/serpentem/octopus-amd/tree/master/example)
+ - [Contributing](#contributing)
+  - [Setup](#setup)
+  - [Watch](#watch)
+  - [Build](#build)
+  - [Test](#test)
 
 --
 <a name="usage"/>
@@ -36,4 +41,50 @@ Micro AMD Loader.
 --
 <a name="tools"/>
 # Tools
-* If you're into CoffeeScript, you may take look at [Coffee-Toaster](#http://github.com/serpentem/coffee-toaster) which use Octupus-AMD as it's default loader.
+
+If you're into CoffeeScript, you may take look at [Coffee-Toaster](#http://github.com/serpentem/coffee-toaster) which use Octupus-AMD as it's default loader.
+
+Coffee-Toaster also optimize your modules -- OctopusAMD itself doesn't have an embeded optimnization routine.
+
+--
+<a name="contributing">
+# Contributing
+
+The included `makefile` orchestrates these actions:
+
+<a name="setup">
+# Setup
+
+Sets up repository.
+
+````bash
+make setup
+````
+
+<a name="watch">
+# Watch
+
+Keep in watch'n'compile mode.
+Note that the minified version is no compiled here, just the pretty one.
+
+````bash
+make watch
+````
+
+<a name="build">
+# Build
+
+Builds both pretty and minified files.
+
+````bash
+make build
+````
+
+<a name="test">
+# Test
+
+There are currently no tests available (TODO).
+
+````bash
+make test
+````
