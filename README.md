@@ -7,7 +7,7 @@ Micro AMD Loader.
 
  - [Usage](#usage)
  - [Tools](#tools)
- - [Example](https://github.com/serpentem/octopus-amd/example)
+ - [Example](https://github.com/serpentem/octopus-amd/tree/master/example)
 
 --
 <a name="usage"/>
