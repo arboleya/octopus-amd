@@ -36,4 +36,4 @@ Micro AMD Loader.
 --
 <a name="tools"/>
 # Tools
-* If your into CoffeeScript, you may take look at [Coffee-Toaster](#http://github.com/serpentem/coffee-toaster) which use Octupus-AMD as it's default loader.
+* If you're into CoffeeScript, you may take look at [Coffee-Toaster](#http://github.com/serpentem/coffee-toaster) which use Octupus-AMD as it's default loader.
