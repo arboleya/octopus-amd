@@ -1,0 +1,1 @@
+../lib/octopus-amd.js
