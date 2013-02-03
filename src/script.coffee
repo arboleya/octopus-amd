@@ -16,14 +16,14 @@ class Script
 
   load:()->
 
-    if OctupusAMD.MAP[@id]?
-      @url = OctupusAMD.MAP[@id]
+    if OctopusAMD.MAP[@id]?
+      @url = OctopusAMD.MAP[@id]
     else
       @url = @id
 
     unless /^http/m.test @url 
-      reg = new RegExp( "(^#{OctupusAMD.BASE_URL.replace '/', '\\/'})" )
-      @url = "#{OctupusAMD.BASE_URL}#{@url}" unless reg.test @url
+      reg = new RegExp( "(^#{OctopusAMD.BASE_URL.replace '/', '\\/'})" )
+      @url = "#{OctopusAMD.BASE_URL}#{@url}" unless reg.test @url
 
     # adds extension if needed
     if (@url.indexOf '.js') < 0

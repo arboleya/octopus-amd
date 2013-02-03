@@ -1,9 +1,9 @@
 # initialize global require / define
-require = -> OctupusAMD.process 'require', [].slice.call arguments
-define = -> OctupusAMD.process 'define', [].slice.call arguments
+require = -> OctopusAMD.process 'require', [].slice.call arguments
+define = -> OctopusAMD.process 'define', [].slice.call arguments
 
-# OctupusAMD class
-class OctupusAMD
+# OctopusAMD class
+class OctopusAMD
 
   @last_chunk = null
   @BASE_URL = null
@@ -12,8 +12,8 @@ class OctupusAMD
   # ...
   # configures octopus
   @config:( options )->
-    OctupusAMD.BASE_URL = options.base_url ? ''
-    OctupusAMD.MAP = options.paths ? {}
+    @BASE_URL = options.base_url or ''
+    @MAP = options.paths or {}
 
   # ...
   # process all require's and define's calls
@@ -21,10 +21,10 @@ class OctupusAMD
     # first require is handled differently because if isn't loaded
     # like all the others
     if @last_chunk? and @last_chunk.type is 'require'
-      OctupusAMD.define_chunk 'root'
+      @define_chunk 'root'
 
     # format params checking all possible ways
-    params = OctupusAMD._name_params type, params
+    params = @_name_params type, params
 
     # creates and stores a new Chunk
     chunk = new Chunk type, params.id, params.deps, params.factory
@@ -47,7 +47,7 @@ class OctupusAMD
         # onload callback
         (id, url, is_non_amd)->
           # define the last instantiated chunk
-          OctupusAMD.define_chunk id, url, is_non_amd
+          OctopusAMD.define_chunk id, url, is_non_amd
 
           # re-position the module in the right position
           Chunk.put_in_place id
@@ -73,15 +73,15 @@ class OctupusAMD
       is_non_amd = true
       id = id.substr 1
     
-    if OctupusAMD.MAP[id]?
-      url = OctupusAMD.MAP[id]
+    if @MAP[id]?
+      url = @MAP[id]
     else
       url = id
 
     unless (/^http/m.test url )
-      absolute = new RegExp( "(^#{OctupusAMD.BASE_URL.replace '/', '\\/'})" )
+      absolute = new RegExp( "(^#{@BASE_URL.replace '/', '\\/'})" )
       unless (absolute.test url)
-        url = "#{OctupusAMD.BASE_URL}#{url}"
+        url = "#{@BASE_URL}#{url}"
 
     # adds extension if needed
     if (url.indexOf '.js') < 0

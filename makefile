@@ -5,23 +5,23 @@ UJS=node_modules/.bin/uglifyjs
 VERSION=`$(CS) build/bumper --version`
 
 build:
-	@$(CS) -o lib -j octupus-amd.coffee -cb \
+	@$(CS) -o lib -j octopus-amd.coffee -cb \
 		src/.header.coffee \
 		src/script.coffee \
 		src/chunk.coffee \
-		src/octupus.coffee
+		src/octopus.coffee
 
-	@sed -i.bak 's/\/\/.*//g' lib/octupus-amd.js
-	@rm lib/octupus-amd.js.bak
-	@$(UJS) -o lib/octupus-amd.min.js lib/octupus-amd.js
+	@sed -i.bak 's/\/\/.*//g' lib/octopus-amd.js
+	@rm lib/octopus-amd.js.bak
+	@$(UJS) -o lib/octopus-amd.min.js lib/octopus-amd.js
 	@echo 'Build sucessfull.'
 
 watch:
 	@echo 'Watching...'
-	@$(CS) -o lib -j octupus-amd.coffee -cbw \
+	@$(CS) -o lib -j octopus-amd.coffee -cbw \
 		src/script.coffee \
 		src/chunk.coffee \
-		src/octupus.coffee
+		src/octopus.coffee
 
 
 setup:
