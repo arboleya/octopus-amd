@@ -10,7 +10,7 @@
 
   "repository": {
     "type": "git",
-    "url": "http://github.com/serpentem/coffee-kettle"
+    "url": "https://github.com/serpentem/octopus-amd"
   },
 
   "engines": { "node": ">= 0.8.14" },
