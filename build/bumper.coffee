@@ -44,9 +44,9 @@ fs.writeFileSync filepath, (contents.replace search, replace)
 console.log '• package.json'
 
 # updating HEADER (license, docs)
-filepath = path.join __dirname, "src/.header.md"
+filepath = path.join __dirname, "../src/.header.coffee"
 contents = fs.readFileSync filepath, 'utf-8'
-search = />\- v[0-9]+.[0-9]+.[0-9]+/
-replace = '> - v' + new_version
+search = /- v[0-9]+.[0-9]+.[0-9]+/
+replace = '- v' + new_version
 fs.writeFileSync filepath, (contents.replace search, replace)
-console.log '• README.md'
+console.log '• src/.header.coffee'
