@@ -49,8 +49,8 @@ class OctopusAMD
           # define the last instantiated chunk
           OctopusAMD.define_chunk id, url, is_non_amd
 
-          # re-position the module in the right position
-          Chunk.put_in_place id
+          # reorders all chunks
+          Chunk.reorder()
 
           # notify everybody that a new chunk was defined
           Chunk.notify_all id
@@ -60,7 +60,7 @@ class OctopusAMD
           console.error e
 
         # timeout
-        , ++timeout, is_non_amd
+        , (timeout += 1), is_non_amd
 
   # ...
   # disassemble an id, checks if it has some url mapped to another location,
