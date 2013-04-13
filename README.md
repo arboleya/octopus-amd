@@ -42,7 +42,7 @@ Micro AMD Loader.
 <a name="tools"/>
 # Tools
 
-If you're into CoffeeScript, you may take look at [Coffee-Toaster](#http://github.com/serpentem/coffee-toaster) which use Octupus-AMD as it's default loader.
+If you're into CoffeeScript, you may wish to have look at [Coffee-Toaster](#http://github.com/serpentem/coffee-toaster) which use Octupus-AMD as it's standard loader.
 
 Coffee-Toaster also optimize your modules -- OctopusAMD itself doesn't have an embeded optimnization routine.
 
@@ -65,7 +65,7 @@ make setup
 # Watch
 
 Keep in watch'n'compile mode.
-Note that the minified version is no compiled here, just the pretty one.
+note: the minified version is not compiled here.
 
 ````bash
 make watch
@@ -74,7 +74,7 @@ make watch
 <a name="build">
 # Build
 
-Builds both pretty and minified files.
+Builds pretty and minified versions.
 
 ````bash
 make build
